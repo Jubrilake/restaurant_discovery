@@ -1,50 +1,71 @@
-# Welcome to your Expo app 👋
+# Restaurant Discovery App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+> A modern React Native application for discoering Restaurant
 
-## Get started
+## Table of Contents
 
-1. Install dependencies
+- [General Information](#general-information)
+- [Technologies Used](#technologies-used)
+- [Features](#features)
+- [Screenshots](#screenshots)
+- [Setup](#setup)
+- [Usage](#usage)
+- [Project Status](#project-status)
+- [Room for Improvement](#room-for-improvement)
+- [Acknowledgements](#acknowledgements)
+- [Contact](#contact)
 
-   ```bash
-   npm install
-   ```
+---
 
-2. Start the app
+## General Information
 
-   ```bash
-   npx expo start
-   ```
+- This project is a **restaurant discovery app** built with **React Native (Expo)**.
+- It provides users with a way to browse, search, and filter restaurant listings by name, cuisine, price range, rating and delivery time
+- Includes **dark/light theme switching** for accessibility and better user experience.
+- Designed with **scalable architecture**, **state management**, and **mock API simulation** for rapid prototyping and testing.
 
-In the output, you'll find options to open the app in a
+---
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Technologies Used
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+- **React Native (Expo SDK 54)**
+- **TypeScript**
+- **Zustand** – global state management
+- **Tanstack Query** – server state management & API fetching
+- **React Native Community Slider**
+- **React Native Reanimated & Bottom Sheet**
+- **TailwindCSS (NativeWind)**
 
-## Get a fresh project
+---
 
-When you're ready, run:
+## Features
+
+- 🌗 **Dark/Light Mode Toggle** – managed globally via Zustand.
+- 🍽️ **Restaurant Listings** – mock data generation with local images.
+- 🔍 **Search and Filter** – by name, price range, and category.
+- 🎚️ **Dynamic Price Slider** – real-time updates for filter range.
+- 💾 **API-Ready Integration** – easy to switch to live API using Tanstack Query.
+- 📱 **Responsive UI** – optimized for both iOS and Android.
+- 💬 **Keyboard-Aware Filter Sheet** – automatically adjusts height when typing.
+
+---
+
+## Setup
+
+### Prerequisites
+
+Make sure you have the following installed:
+
+- Node.js (>=20)
+- Expo CLI (`npm install -g expo-cli`)
+- npm
+
+### Installation
+
+Clone the repository and install dependencies:
 
 ```bash
-npm run reset-project
+git clone https://github.com/Jubrilake/restaurant_discovery.git
+cd restaurant-discovery-app
+npm install
 ```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
