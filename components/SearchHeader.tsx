@@ -1,5 +1,5 @@
 import { useRestaurantSearch } from "@/hooks/useRestaurantSearch";
-import { Search } from "lucide-react-native";
+import { Ionicons } from "@expo/vector-icons";
 import React, { useEffect } from "react";
 import { TextInput, View } from "react-native";
 
@@ -10,13 +10,14 @@ export const SearchHeader: React.FC<{
 
   useEffect(() => {
     onDebouncedSearch(query);
-    // eslint-disable-next-line
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <View className="p-3.5">
       <View className="flex-row items-center bg-gray-100 rounded-lg px-3 py-2">
-        <Search size={20} color="#9ca3af" strokeWidth={2} />
+        {/* Ionicons Search Icon */}
+        <Ionicons name="search-outline" size={20} color="#9ca3af" />
 
         <TextInput
           placeholder="Search restaurants, cuisine..."

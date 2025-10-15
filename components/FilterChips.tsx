@@ -1,5 +1,5 @@
 import { RestaurantFilter } from "@/types/restaurant";
-import { X } from "lucide-react-native";
+import { Ionicons } from "@expo/vector-icons";
 import React from "react";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 
@@ -28,7 +28,7 @@ export const FilterChips = ({
     <ScrollView
       horizontal
       showsHorizontalScrollIndicator={false}
-      className=" flex-row flex-wrap mb-2 space-x-2 px-4 min-h-9"
+      className="flex-row flex-wrap mb-2 space-x-2 px-4 min-h-9"
     >
       {chips.map((chip, index) => (
         <View
@@ -38,12 +38,14 @@ export const FilterChips = ({
           <Text className="text-sm text-gray-800 mr-1">
             {chip.label}: {chip.value}
           </Text>
+
+          {/* Ionicons Close Icon */}
           <TouchableOpacity
             onPress={() =>
               removeFilter(chip.key as keyof RestaurantFilter, chip.value)
             }
           >
-            <X size={16} color="#444" />
+            <Ionicons name="close" size={16} color="#444" />
           </TouchableOpacity>
         </View>
       ))}
