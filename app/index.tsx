@@ -50,7 +50,7 @@ export default function Index() {
         }`}
       >
         {/* Header */}
-        <View className="px-4 pb-2 flex flex-row justify-between items-center">
+        <View className="px-6 pb-2 flex flex-row justify-between items-center">
           {hasSearchOrFilter ? (
             <Text
               className={`font-semibold text-xl ${
@@ -86,7 +86,7 @@ export default function Index() {
         </View>
 
         {/* Search + Filter Row */}
-        <View className="flex-row items-center px-4 py-3 space-x-3">
+        <View className="flex-row items-center px-2 py-3 space-x-3">
           <View className="flex-1 flex ">
             <SearchHeader onDebouncedSearch={setQState} />
           </View>
@@ -112,7 +112,11 @@ export default function Index() {
           </TouchableOpacity>
         </View>
         <>
-          <FilterChips reset={clearAllFilters} filters={filters} removeFilter={removeSingleFilter}/>
+          <FilterChips
+            reset={clearAllFilters}
+            filters={filters}
+            removeFilter={removeSingleFilter}
+          />
         </>
 
         {/* Restaurant Grid */}

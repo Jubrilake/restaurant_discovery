@@ -9,7 +9,7 @@ import { makeMenu } from "@/utils";
 
 const imagesArr = Object.values(images);
 
-function pickImageForIndex(index: number) {
+export function pickImageForIndex(index: number) {
   return imagesArr[(index - 1) % imagesArr.length];
 }
 
