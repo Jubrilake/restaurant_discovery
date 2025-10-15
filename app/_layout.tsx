@@ -11,7 +11,11 @@ export default function RootLayout() {
       <SafeAreaProvider>
         <ThemeProvider>
           <SafeAreaView style={styles.container}>
-            <Stack screenOptions={{ headerShown: false }} />
+            <Stack screenOptions={{ headerShown: false }}>
+              <Stack.Screen name="index" options={{ headerShown: false }} />
+              <Stack.Screen name="restaurant/[id]" options={{ headerShown: false }} />
+              <Stack.Screen name="+not-found" />
+            </Stack>
           </SafeAreaView>
         </ThemeProvider>
       </SafeAreaProvider>

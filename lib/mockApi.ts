@@ -1,6 +1,11 @@
 // src/lib/mockApi.ts
 import { images } from "@/constant";
-import { Restaurant, RestaurantFilter } from "@/types/restaurant";
+import {
+  Restaurant,
+  RestaurantFilter,
+  RestaurantWithMenu,
+} from "@/types/restaurant";
+import { makeMenu } from "@/utils";
 
 const imagesArr = Object.values(images);
 
@@ -76,7 +81,6 @@ export async function fetchRestaurants({
 
   let filtered = DATA.slice();
 
-  // Search across name, cuisine, and description-like fields
   if (q && q.trim().length > 0) {
     const low = q.toLowerCase();
     filtered = filtered.filter(
@@ -134,4 +138,27 @@ export async function fetchRestaurants({
       ? String(start + slice.length)
       : null;
   return { data: slice, nextCursor: next };
+}
+
+export async function getRestaurantWithMenu(
+  id: string
+): Promise<RestaurantWithMenu | null> {
+  await new Promise((res) => setTimeout(res, 300 + Math.random() * 300)); // simulate latency
+
+  const restaurant = DATA.find((r) => r.id === id);
+  if (!restaurant) return null;
+
+  const extended: RestaurantWithMenu = {
+    ...restaurant,
+    deliveryFee: 800 + Math.floor(Math.random() * 3) * 200,
+    minimumOrder: 2500 + Math.floor(Math.random() * 5) * 500,
+    promotions: [
+      "10% off on orders above ₦5000",
+      "Free delivery on weekends",
+      "Buy 2 get 1 free on drinks",
+    ].slice(0, Math.floor(Math.random() * 3) + 1),
+    menu: makeMenu(restaurant.id),
+  };
+
+  return extended;
 }

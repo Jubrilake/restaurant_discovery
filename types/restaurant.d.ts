@@ -1,4 +1,3 @@
-// src/types/restaurant.ts
 export interface Restaurant {
   id: string;
   name: string;
@@ -10,6 +9,25 @@ export interface Restaurant {
   dietaryOptions: string[];
   isOpen: boolean;
   location: { latitude: number; longitude: number };
+}
+
+export interface MenuItem {
+  id: string;
+  name: string;
+  description: string;
+  price: number;
+  image: string;
+  category: string;
+  dietaryTags: string[];
+  isAvailable: boolean;
+  preparationTime?: number;
+}
+
+export interface RestaurantWithMenu extends Restaurant {
+  menu: MenuItem[];
+  deliveryFee: number;
+  minimumOrder: number;
+  promotions: string[];
 }
 
 export type RestaurantFilter = {

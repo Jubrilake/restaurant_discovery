@@ -1,6 +1,7 @@
 import { useThemeStore } from "@/store/themeStore";
 import { Restaurant } from "@/types/restaurant";
 import { Feather } from "@expo/vector-icons";
+import { router } from "expo-router";
 import React from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 
@@ -9,6 +10,12 @@ export const RestaurantCard: React.FC<{ item: Restaurant }> = ({ item }) => {
 
   return (
     <TouchableOpacity
+      onPress={() =>
+        router.push({
+          pathname: "/restaurant/[id]",
+          params: { id: item.id },
+        })
+      }
       activeOpacity={0.85}
       className={`rounded-2xl overflow-hidden m-2 flex-1 shadow-sm 
         ${theme === "dark" ? "bg-gray-900" : "bg-white"}
