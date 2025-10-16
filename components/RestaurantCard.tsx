@@ -7,6 +7,7 @@ import { Image, Text, TouchableOpacity, View } from "react-native";
 
 export const RestaurantCard: React.FC<{ item: Restaurant }> = ({ item }) => {
   const { theme } = useThemeStore();
+  const [bookmarked, setBookmarked] = React.useState(false);
 
   return (
     <TouchableOpacity
@@ -21,8 +22,20 @@ export const RestaurantCard: React.FC<{ item: Restaurant }> = ({ item }) => {
         ${theme === "dark" ? "bg-gray-900" : "bg-white"}
       `}
     >
-      {/* Restaurant Image */}
-      <Image source={item.image} className="h-40 w-full" resizeMode="cover" />
+      <View className="relative">
+        <Image source={item.image} className="h-40 w-full" resizeMode="cover" />
+
+        <TouchableOpacity
+          onPress={() => setBookmarked(!bookmarked)}
+          className="absolute top-1 right-2 bg-black/40 rounded-full p-2"
+        >
+          <Feather
+            name={bookmarked ? "bookmark" : "bookmark"}
+            size={20}
+            color={bookmarked ? "#facc15" : "#fff"}
+          />
+        </TouchableOpacity>
+      </View>
 
       {/* Content */}
       <View className="p-3">

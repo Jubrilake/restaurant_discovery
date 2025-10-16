@@ -21,12 +21,20 @@ export const PriceSection: React.FC<PriceSectionProps> = ({
 
   return (
     <View>
-      <Text className="text-base font-semibold text-gray-700 mt-5 mb-2">
+      <Text
+        className={`text-base font-semibold${
+          isDark ? "text-gray-200" : "text-gray-700"
+        } mt-5 mb-2`}
+      >
         Price
       </Text>
       <View className="flex-row justify-between items-center mb-2">
-        <Text className="text-gray-600">₦{minPrice}</Text>
-        <Text className="text-gray-600">₦{maxPrice}</Text>
+        <Text className={` ${isDark ? "text-gray-200" : "text-gray-700"} `}>
+          ₦{minPrice}
+        </Text>
+        <Text className={` ${isDark ? "text-gray-200" : "text-gray-700"} `}>
+          ₦{maxPrice}
+        </Text>
       </View>
 
       {/* Slider */}
